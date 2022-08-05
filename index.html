@@ -43,22 +43,112 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="path/to/font-awesome/css/font-awesome.min.css"
-    />
+ <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="stylesheet" href="" />
     <title>Image Editor Zahra </title>
 </head>
 <body>
     <div class="container border">
-<h2> Zahra's Image Editor 
+        <h2> Zahra's Image Editor </h2>
+        <div class="wrapper">          
+<div class="row editorcol">
+    <div class="col-md-4 border fcol">
+        <label class="title">
+            Filters
+        </label>
+        <div class="options">
+        <div class="row btnrow">
+<div class="col fcol">
+   <button type="button" class="btn btn-outline-primary">Brightness</button>
+</div>
+<div class="col fcol">
+  <button type="button" class="btn btn-outline-primary">Saturation </button>
+
+</div>
+        </div>
+           <div class="row btnrow">
+           <div class="col fcol">
+  <button type="button" class="btn btn-outline-primary">Inversion </button>
+</div>
+<div class="col fcol">
+   <button type="button" class="btn btn-outline-primary">Grayscale</button>
+</div>
+        </div>
+        </div>
+<div class="slider">
+    
+        <div class="filter-info">
+                         <label class="name">
+           Brightness
+        </label>
+                            <p class="value">100%</p>
+                        </div>
+    <div class="filterslider row">      
+        <input type="range" value="100" min="0" max="200">
+    </div>
+</div>
+<div class="rotate">
+        <label class="title">
+           Rotate and Flip
+        </label>
+       <div class="Ropt row">
+<div class="col">
+<button id="left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+  <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+</svg></button>
+</div>
+<div class="col">
+<button id="left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+</svg>
+</button>
+</div>
+<div class="col">
+<button id="horizontal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-horizontal" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"/>
+  <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"/>
+</svg></button>
+</div>
+<div class="col">
+<button id="vertical"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-distribute-vertical" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 1.5a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 0-1h-13a.5.5 0 0 0-.5.5zm0 13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 0-1h-13a.5.5 0 0 0-.5.5z"/>
+  <path d="M2 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7z"/>
+</svg></button>
+</div>
+       </div>
+    
+</div>
+    </div>
+        <div class="col-md-8 border ecol ">
+            <div class="previewimg">
+ <img src="https://codingnepalweb.com/demos/image-editor-javascript/image-placeholder.svg" alt="preview-img">
+            </div>
+
+    </div>
+</div>
+<div class=" Buttonrow">
+  <div class="row justify-content-between">
+    <div class="col-4">
+     <button type="button" class="btn btn-outline-primary">Primary</button>
+    </div>
+    <div class="col-4">
+<button type="button" class="btn btn-outline-dark">Dark</button>
+<button type="button" class="btn btn-outline-dark">Dark</button>
+    </div>
+  </div>
+</div>
+
+        </div>
+
+
     </div>
 </body>
 </html>
