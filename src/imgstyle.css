@@ -13,6 +13,10 @@ body {
     background: white;
     border-radius: 15px
 }
+.title{
+    padding: 5px;
+    margin-top: 5px;
+}
 .wrapper {
     margin: 20px 0;
 }
@@ -68,4 +72,17 @@ input[type="range" ] {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+
+
+#myinput {
+  background: linear-gradient(to right, #d082a4 0%,  #fff 100%);
+  border: solid 1px #d082a4;
+  border-radius: 8px;
+  height: 7px;
+  width: 356px;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
 }
