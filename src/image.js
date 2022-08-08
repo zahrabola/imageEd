@@ -22,8 +22,13 @@ const loadImage = () => {
     });
     //console.log(file);
 }
-////////filter 
 
+
+
+
+
+
+////////filter 
 filterOptions.forEach(option => {
   console.log(option);
   option.addEventListener("click", () => {
@@ -51,6 +56,10 @@ filterOptions.forEach(option => {
     }
   });
 });
+
+
+///update
+
 const updateFilter = () => {
 //console.log(filterSlider.value);
    filterValue.innerText = `${filterSlider.value}%`;
@@ -66,6 +75,15 @@ const updateFilter = () => {
   }
   applyFilter();
 };
+
+
+
+
+
+
+
+
+
 
 
 fileInput.addEventListener("change", loadImage);
