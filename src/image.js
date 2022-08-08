@@ -1,13 +1,12 @@
 const fileInput = document.querySelector(".fileinputimg"),
  chooseimgbtn = document.querySelector(".chooseimg"),
  previewImg = document.querySelector(".previewimg img"),
- filterOptions = document.querySelectorAll(".fcol btn button"),
+ filterOptions = document.querySelectorAll(".filter button"),
 filterName = document.querySelector(".filter-info .name"),
  filterValue = document.querySelector(".filter-info .value"),
  filterSlider = document.querySelector(".slider input");
 
-let imageName,
-  disableEditor = true;
+
 let brightness = "100",
   saturation = "100",
   inversion = "0",
@@ -28,17 +27,44 @@ const loadImage = () => {
 filterOptions.forEach(option => {
   console.log(option);
   option.addEventListener("click", () => {
-    if (disableEditor) return;
-    document.querySelector(".fcol .active").classList.remove("active");
-    option.classList.add(" active");
+
+    document.querySelector(".active").classList.remove("active");
+    option.classList.add("active");
     filterName.innerText = option.innerText;
 
-
+    if (option.id === "brightness") {
+      filterSlider.max = "200";
+      filterSlider.value = brightness;
+      filterValue.innerText = `${brightness}%`;
+    } else if (option.id === "saturation") {
+      filterSlider.max = "200";
+      filterSlider.value = saturation;
+      filterValue.innerText = `${saturation}%`;
+    } else if (option.id === "inversion") {
+      filterSlider.max = "100";
+      filterSlider.value = inversion;
+      filterValue.innerText = `${inversion}%`;
+    } else {
+      filterSlider.max = "100";
+      filterSlider.value = grayscale;
+      filterValue.innerText = `${grayscale}%`;
+    }
   });
 });
 const updateFilter = () => {
 //console.log(filterSlider.value);
    filterValue.innerText = `${filterSlider.value}%`;
+    const selectedFilter = document.querySelector(".filter .active"); //getting selected filter
+  if (selectedFilter.id === "brightness") {
+    brightness = filterSlider.value;
+  } else if (selectedFilter.id === "saturation") {
+    saturation = filterSlider.value;
+  } else if (selectedFilter.id === "inversion") {
+    inversion = filterSlider.value;
+  } else {
+    grayscale = filterSlider.value;
+  }
+  applyFilter();
 };
 
 
