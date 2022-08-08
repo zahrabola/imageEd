@@ -50,15 +50,15 @@
     />
  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="src/imgstyle.css" />
     <title>Image Editor Zahra </title>
 </head>
 <body>
     <div class="container border">
         <h2> Zahra's Image Editor </h2>
         <div class="wrapper">          
-<div class="row editorcol">
-    <div class="col-md-4 border fcol">
+<div class="row g-2 editorcol">
+    <div class="col-md-4 m-2 border fcol">
         <label class="title">
             Filters
         </label>
@@ -82,7 +82,6 @@
         </div>
         </div>
 <div class="slider">
-    
         <div class="filter-info">
                          <label class="name">
            Brightness
@@ -90,7 +89,7 @@
                             <p class="value">100%</p>
                         </div>
     <div class="filterslider row">      
-        <input type="range" value="100" min="0" max="200">
+        <input type="range" id="myinput" value="100" min="0" max="100">
     </div>
 </div>
 <div class="rotate">
@@ -105,7 +104,7 @@
 </svg></button>
 </div>
 <div class="col">
-<button id="left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+<button id="right"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
   <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
 </svg>
@@ -127,7 +126,7 @@
     
 </div>
     </div>
-        <div class="col-md-8 border ecol ">
+        <div class="col-md-7 p-3 m-2  border ecol ">
             <div class="previewimg">
  <img src="https://codingnepalweb.com/demos/image-editor-javascript/image-placeholder.svg" alt="preview-img">
             </div>
@@ -136,12 +135,12 @@
 </div>
 <div class=" Buttonrow">
   <div class="row justify-content-between">
-    <div class="col-4">
+    <div class="col-4 options">
      <button type="button" class="btn btn-outline-primary">Primary</button>
     </div>
-    <div class="col-4">
-<button type="button" class="btn btn-outline-dark">Dark</button>
-<button type="button" class="btn btn-outline-dark">Dark</button>
+    <div class="col-4 options">
+<button type="button" class="btn btn-outline-dark">Choose Image</button>
+<button type="button" class="btn btn-outline-primary"> Save aImage</button>
     </div>
   </div>
 </div>
