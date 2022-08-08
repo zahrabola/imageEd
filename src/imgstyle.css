@@ -64,7 +64,7 @@ input[type="range" ] {
 #left, #right, #horizontal, #vertical{
     padding: 6px;
     background-color: white;
-    border-radius: 5px;
+    border:none;
 }
 .previewimg img {
     max-width: 490px;
@@ -73,8 +73,6 @@ input[type="range" ] {
     height: 100%;
     object-fit: contain;
 }
-
-
 
 #myinput {
   background: linear-gradient(to right, #d082a4 0%,  #fff 100%);
