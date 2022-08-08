@@ -13,6 +13,10 @@ body {
     background: white;
     border-radius: 15px
 }
+.disable :where(.editorcol, .saveimg){
+    opacity: 0.5;
+      pointer-events: none;
+}
 .title{
     padding: 5px;
     margin-top: 5px;
