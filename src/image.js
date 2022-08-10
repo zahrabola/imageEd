@@ -11,7 +11,8 @@ saveImgBtn = document.querySelector(".saveimg");
 
 
 
-
+let imageName,
+  disableEditor = true;
 let brightness = "100",
   saturation = "100",
   inversion = "0",
@@ -26,6 +27,10 @@ const loadImage = () => {
     if(!file) return;
     previewImg.src =URL.createObjectURL(file); ////passing file though url as preview img src
     previewImg.addEventListener("load", () => {
+      disableEditor = false;
+      resetFilterBtn.click();
+      imageName = file.name.replace(/^.*[\\\/]/, "");
+
         document.querySelector (".container").classList.remove("disable")
     });
     //console.log(file);
@@ -49,9 +54,6 @@ rotate -= 90;
 } else {
   flipVertical = flipVertical === 1 ? -1 : 1 ; 
 }
-
-
-
 
 applyFilter();
 
@@ -122,7 +124,38 @@ filterOptions[0].click();
 };
 //////////// save image
 const saveImage = () => {
-  console.log("save image btn clicked");
+  if (disableEditor) return;
+  saveImgBtn.innerText = "Saving image...";
+  saveImgBtn.classList.add("disable");
+ ///console.log("save image btn clicked");
+    setTimeout(() => {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = previewImg.naturalWidth;
+      canvas.height = previewImg.naturalHeight;
+
+      /// applying user selected filter to canvas filter
+      ctx.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      if (rotate !== 0) {
+        ctx.rotate((rotate * Math.PI) / 180);
+      }
+      ctx.scale(flipHorizontal, flipVertical); //flip canvas fliph flipv
+      ctx.drawImage(
+        previewImg,
+        -canvas.width / 2,
+        -canvas.height / 2,
+        canvas.width,
+        canvas.height
+      );
+      //////document.body.appendChild(canvas);
+      const link = document.createElement("a");
+      link.download = imageName;
+      link.href = canvas.toDataURL();
+      link.click();
+      saveImgBtn.innerText = "Save Image";
+      saveImgBtn.classList.remove("disable");
+    });
 }
 
 
@@ -132,7 +165,7 @@ const saveImage = () => {
 fileInput.addEventListener("change", loadImage);
 filterSlider.addEventListener("input", updateFilter);
 resetFilterBtn.addEventListener("click", resetFilter);
-saveImgBtn.addEventListener("change", saveImage);
+saveImgBtn.addEventListener("click", saveImage);
 /// choose image event click
 chooseimgbtn.addEventListener("click",() => fileInput.click());
 
