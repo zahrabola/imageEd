@@ -5,8 +5,8 @@ const fileInput = document.querySelector(".fileinputimg"),
 filterName = document.querySelector(".filter-info .name"),
  filterValue = document.querySelector(".filter-info .value"),
  filterSlider = document.querySelector(".slider input"),
- rotateOptions = document.querySelectorAll(".rotate button");
-
+ rotateOptions = document.querySelectorAll(".rotate button"),
+resetFilterBtn = document.querySelector(".resetfilter");
 
 let brightness = "100",
   saturation = "100",
@@ -87,7 +87,6 @@ filterOptions.forEach(option => {
 
 
 ///update
-
 const updateFilter = () => {
 //console.log(filterSlider.value);
    filterValue.innerText = `${filterSlider.value}%`;
@@ -104,6 +103,9 @@ const updateFilter = () => {
   applyFilter();
 };
 
+/////////// reset filter 
+
+
 
 
 
@@ -116,6 +118,7 @@ const updateFilter = () => {
 
 fileInput.addEventListener("change", loadImage);
 filterSlider.addEventListener("input", updateFilter);
+resetFilterBtn.addEventListener("input", resetfilter);
 /// choose image event click
 chooseimgbtn.addEventListener("click",() => fileInput.click());
 
