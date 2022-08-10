@@ -22,8 +22,10 @@ const loadImage = () => {
     });
     //console.log(file);
 }
-
-
+/////// apply filter 
+const applyFilter = () => {
+  previewImg.style.filter = `brightness(${brightness}%) saturate(${saturation}%)invert(${inversion}%) grayscale(${grayscale}%)`;
+}
 
 
 
