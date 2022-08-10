@@ -105,7 +105,18 @@ const updateFilter = () => {
 
 /////////// reset filter 
 
+const resetFilter = () => {
+/// resting all variables value to default
+ brightness = "100",
+  saturation = "100",
+  inversion = "0",
+  grayscale = "0";
+ rotate = 0,
+  flipHorizontal = 1,
+  flipVertical = 1;
 
+   applyFilter();
+};
 
 
 
@@ -118,7 +129,7 @@ const updateFilter = () => {
 
 fileInput.addEventListener("change", loadImage);
 filterSlider.addEventListener("input", updateFilter);
-resetFilterBtn.addEventListener("input", resetfilter);
+resetFilterBtn.addEventListener("click", resetFilter);
 /// choose image event click
 chooseimgbtn.addEventListener("click",() => fileInput.click());
 
