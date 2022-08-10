@@ -6,7 +6,11 @@ filterName = document.querySelector(".filter-info .name"),
  filterValue = document.querySelector(".filter-info .value"),
  filterSlider = document.querySelector(".slider input"),
  rotateOptions = document.querySelectorAll(".rotate button"),
-resetFilterBtn = document.querySelector(".resetfilter");
+resetFilterBtn = document.querySelector(".resetfilter"),
+saveImgBtn = document.querySelector(".saveimg");
+
+
+
 
 let brightness = "100",
   saturation = "100",
@@ -104,7 +108,6 @@ const updateFilter = () => {
 };
 
 /////////// reset filter 
-
 const resetFilter = () => {
 /// resting all variables value to default
  brightness = "100",
@@ -114,14 +117,13 @@ const resetFilter = () => {
  rotate = 0,
   flipHorizontal = 1,
   flipVertical = 1;
-
+filterOptions[0].click();
    applyFilter();
 };
-
-
-
-
-
+//////////// save image
+const saveImage = () => {
+  console.log("save image btn clicked");
+}
 
 
 
@@ -130,6 +132,7 @@ const resetFilter = () => {
 fileInput.addEventListener("change", loadImage);
 filterSlider.addEventListener("input", updateFilter);
 resetFilterBtn.addEventListener("click", resetFilter);
+saveImgBtn.addEventListener("change", saveImage);
 /// choose image event click
 chooseimgbtn.addEventListener("click",() => fileInput.click());
 
