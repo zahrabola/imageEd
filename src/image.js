@@ -40,13 +40,16 @@ if (option.id === "left") {
 rotate -= 90;
 } else if (option.id === "right") {
   rotate += 90;
+} else if (option.id === "horizontal") {
+  flipHorizontal = flipHorizontal === 1 ? -1 : 1 ;
+} else {
+  flipVertical = flipVertical === 1 ? -1 : 1 ; 
 }
 
-  applyFilter();
 
 
 
-
+applyFilter();
 
   })
 })
